@@ -325,7 +325,7 @@ module Axlsx
         (b_opts[:edges] || [:left, :right, :top, :bottom]).each do |edge|
           edge_options = options["border_#{edge}".to_sym] || {}
           border_edge = b_opts.merge(edge_options)
-          b_options = { :name => edge, :style => border_edge[:style], :color => Color.new(:rgb => border_edge[:color]) }
+          b_options = { :name => edge.to_sym, :style => border_edge[:style].to_sym, :color => Color.new(:rgb => border_edge[:color].to_s) }
           border.prs << BorderPr.new(b_options)
         end
         options[:type] == :dxf ? border : borders << border

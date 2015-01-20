@@ -259,6 +259,7 @@ module Axlsx
     # @see CellAlignment
     def parse_alignment_options(options={})
       return unless options[:alignment]
+      options[:alignment].each {|key, value| options[:alignment][key] = value.to_sym}
       CellAlignment.new options[:alignment]
     end
 

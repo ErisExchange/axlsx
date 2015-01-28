@@ -7,5 +7,4 @@ group :test do
 end
 
 group :profile do
-  gem 'ruby-prof'
 end
